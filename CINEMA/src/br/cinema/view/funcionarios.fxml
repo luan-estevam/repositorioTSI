@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="105.0" layoutY="60.0" text="Salario:" />
+      <Label layoutX="105.0" layoutY="108.0" text="Função:" />
+      <Label layoutX="71.0" layoutY="151.0" text="Data admissão:" />
+      <Label layoutX="117.0" layoutY="200.0" text="Turno:" />
+      <TextField id="txtSalario" fx:id="txtSalario" layoutX="172.0" layoutY="56.0" />
+      <TextField id="txtFuncao" fx:id="txtFuncao" layoutX="172.0" layoutY="104.0" />
+      <TextField id="txtAdmissao" fx:id="txtDataAdmissao" layoutX="172.0" layoutY="147.0" />
+      <TextField id="txtTurno" fx:id="txtTurno" layoutX="172.0" layoutY="196.0" />
+      <Button id="btnGravar" fx:id="btnGravar" layoutX="151.0" layoutY="576.0" mnemonicParsing="false" text="Gravar" />
+      <Button id="btnFechar" fx:id="btnFechar" layoutX="362.0" layoutY="576.0" mnemonicParsing="false" text="Fechar" />
+      <ImageView fitHeight="251.0" fitWidth="245.0" layoutX="332.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/funcionarios.png" />
+         </image>
+      </ImageView>
+      <TextField id="txtCep" fx:id="txtCepFuncionario" layoutX="172.0" layoutY="506.0" />
+      <TextField id="txtCnpj" fx:id="txtCnpjFuncionario" layoutX="172.0" layoutY="473.0" />
+      <TextField id="txtEmail" fx:id="txtEmailFuncionario" layoutX="172.0" layoutY="435.0" />
+      <TextField id="txtDataNascimento" fx:id="txtDataNascimentoFuncionario" layoutX="172.0" layoutY="402.0" />
+      <TextField id="txtFone" fx:id="txtFoneFuncionario" layoutX="172.0" layoutY="361.0" />
+      <TextField id="txtEndereco" fx:id="txtEnderecoFuncionario" layoutX="172.0" layoutY="326.0" />
+      <TextField id="TxtNome" fx:id="txtNomeFuncionario" layoutX="172.0" layoutY="286.0" />
+      <TextField id="txtCpf" fx:id="txtCpfFuncionario" layoutX="172.0" layoutY="245.0" />
+      <Label layoutX="127.0" layoutY="510.0" text="CEP" />
+      <Label layoutX="123.0" layoutY="477.0" text="CNPJ" />
+      <Label layoutX="120.0" layoutY="439.0" text="E-mail" />
+      <Label layoutX="66.0" layoutY="406.0" text="Data Nascimento" />
+      <Label layoutX="124.0" layoutY="365.0" text="Fone" />
+      <Label layoutX="112.0" layoutY="330.0" text="Endereço" />
+      <Label layoutX="111.0" layoutY="290.0" text="Nome" />
+      <Label layoutX="117.0" layoutY="249.0" text="CPF" />
+   </children>
+</Pane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="531.0" layoutY="23.0" text="Titulo:" />
+      <Label layoutX="524.0" layoutY="67.0" text="Duração:" />
+      <Label layoutX="500.0" layoutY="113.0" text="Classificação:" />
+      <Label layoutX="526.0" layoutY="154.0" text="Genero:" />
+      <Label layoutX="524.0" layoutY="196.0" text="Resumo:" />
+      <TextField fx:id="txtTitulo" layoutX="586.0" layoutY="19.0" />
+      <TextField fx:id="txtDuracao" layoutX="586.0" layoutY="63.0" />
+      <TextField fx:id="txtClassificacao" layoutX="586.0" layoutY="109.0" />
+      <TextField fx:id="txtGenero" layoutX="586.0" layoutY="150.0" />
+      <TextField fx:id="txtResumo" layoutX="586.0" layoutY="192.0" />
+      <Button fx:id="btnGravar" layoutX="567.0" layoutY="236.0" mnemonicParsing="false" text="Gravar" />
+      <Button fx:id="btnFechar" layoutX="691.0" layoutY="236.0" mnemonicParsing="false" text="Fechar" />
+      <ImageView fitHeight="306.0" fitWidth="482.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/filmes.JPG" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

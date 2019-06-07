@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.view.ControllerCliente">
+   <children>
+      <Label layoutX="383.0" layoutY="49.0" text="Tipo de cliente:" />
+      <Label layoutX="409.0" layoutY="103.0" text="Estudante:" />
+      <Label layoutX="412.0" layoutY="148.0" text="Validade:" />
+      <TextField id="txtCliente" fx:id="txtTipoCliente" layoutX="483.0" layoutY="45.0" />
+      <TextField id="txtEstudante" fx:id="txtEstudante" layoutX="484.0" layoutY="99.0" />
+      <TextField id="txtValidade" fx:id="txtValidade" layoutX="484.0" layoutY="144.0" />
+      <ImageView fitHeight="360.0" fitWidth="361.0" layoutX="14.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagens/cliente.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnFechar" layoutX="544.0" layoutY="491.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Fechar" />
+      <Button fx:id="btnGravar" layoutX="441.0" layoutY="491.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Gravar" />
+      <TextField id="txtCep" fx:id="txtCepCliente" layoutX="486.0" layoutY="433.0" />
+      <TextField id="txtCnpj" fx:id="txtCnpjCliente" layoutX="486.0" layoutY="400.0" />
+      <TextField id="txtEmail" fx:id="txtEmailCliente" layoutX="486.0" layoutY="362.0" />
+      <TextField id="txtDataNascimento" fx:id="txtDataNascimentoCliente" layoutX="486.0" layoutY="329.0" />
+      <TextField id="txtFone" fx:id="txtFoneCliente" layoutX="486.0" layoutY="288.0" />
+      <TextField id="txtEndereco" fx:id="txtEnderecoCliente" layoutX="486.0" layoutY="253.0" />
+      <TextField id="txtCpf" fx:id="txtCpfCliente" layoutX="486.0" layoutY="184.0" />
+      <Label layoutX="441.0" layoutY="437.0" text="CEP" />
+      <Label layoutX="437.0" layoutY="404.0" text="CNPJ" />
+      <Label layoutX="434.0" layoutY="366.0" text="E-mail" />
+      <Label layoutX="380.0" layoutY="333.0" text="Data Nascimento" />
+      <Label layoutX="438.0" layoutY="292.0" text="Fone" />
+      <Label layoutX="426.0" layoutY="257.0" text="Endereço" />
+      <Label layoutX="435.0" layoutY="225.0" text="Nome" />
+      <Label layoutX="441.0" layoutY="188.0" text="CPF" />
+      <TextField id="txtEndereco" fx:id="txtNomeCliente" layoutX="486.0" layoutY="221.0" />
+   </children>
+</Pane>
