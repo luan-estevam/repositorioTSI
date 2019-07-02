@@ -10,7 +10,7 @@ import br.cinema.JPA.FabricaConexao;
 import br.cinema.model.Assento;
 
 
-public class AssentoBD implements AssentoDAO {
+public class AssentoBD {
 	
 	private Connection conn = null;
 	
@@ -25,7 +25,7 @@ public class AssentoBD implements AssentoDAO {
 			
 	}
 
-	@Override
+	
 	public void saveAssento(Assento assento) throws CinemaDAOException {
 		String sql = "INSERT INTO tab_assento VALUES (?,?)";
 		
@@ -50,19 +50,19 @@ public class AssentoBD implements AssentoDAO {
 		
 	}
 
-	@Override
+	
 	public boolean deleteAssento(int tipo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+	
 	public List<Assento> getAssento() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+
 	public void updateMovie(Assento assento) {
 		// TODO Auto-generated method stub
 		

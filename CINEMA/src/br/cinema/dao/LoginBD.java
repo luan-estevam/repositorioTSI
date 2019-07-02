@@ -9,7 +9,7 @@ import br.cinema.JPA.CinemaDAOException;
 import br.cinema.JPA.FabricaConexao;
 import br.cinema.model.Login;
 
-public class LoginBD implements LoginDAO {
+public class LoginBD {
 
 	private Connection conn = null;
 	
@@ -24,9 +24,9 @@ public class LoginBD implements LoginDAO {
 			
 	}
 
-	@Override
+	
 	public void saveLogin(Login login) throws CinemaDAOException {
-		String sql = "INSERT INTO tab_filme VALUES (?,?)";
+		String sql = "INSERT INTO tab_login VALUES (?,?)";
 		
 		PreparedStatement stmt = null;
 		
@@ -50,19 +50,19 @@ public class LoginBD implements LoginDAO {
 	}
 	
 	
-	@Override
+	
 	public boolean deleteLogin(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+	
 	public List<Login> getLogin() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public void updateLogin(Login login) {
 		// TODO Auto-generated method stub
 		

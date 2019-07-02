@@ -10,7 +10,7 @@ import br.cinema.JPA.CinemaDAOException;
 import br.cinema.JPA.FabricaConexao;
 import br.cinema.model.Sessao;
 
-public class SessaoBD implements SessaoDAO {
+public class SessaoBD {
 
 	
 	private Connection conn = null;
@@ -26,9 +26,9 @@ public class SessaoBD implements SessaoDAO {
 			
 	}
 
-	@Override
+	
 	public void saveSessao(Sessao sessao) throws CinemaDAOException {
-		String sql = "INSERT INTO tab_filme VALUES (?,?,?,?)";
+		String sql = "INSERT INTO tab_sessao VALUES (?,?,?,?)";
 		
 		PreparedStatement stmt = null;
 		
@@ -36,9 +36,9 @@ public class SessaoBD implements SessaoDAO {
 			
 		stmt = conn.prepareStatement(sql);
 		
-		stmt.setDate(1, (Date) sessao.getData());
+		stmt.setString(1, sessao.getData());
 		stmt.setString(2, sessao.getHora());
-		stmt.setFloat(3, sessao.getValor());
+		stmt.setString(3, sessao.getValor());
 		stmt.setString(4, sessao.getTipo());
 
 		
@@ -54,19 +54,19 @@ public class SessaoBD implements SessaoDAO {
 		
 	}
 
-	@Override
+	
 	public boolean deleteSessao(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+	
 	public List<Sessao> getSessao() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public void updateSessao(Sessao sessao) {
 		// TODO Auto-generated method stub
 		

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.view.ControllerFuncionarios">
    <children>
       <Label layoutX="105.0" layoutY="60.0" text="Salario:" />
       <Label layoutX="105.0" layoutY="108.0" text="Função:" />
@@ -16,8 +17,8 @@
       <TextField id="txtFuncao" fx:id="txtFuncao" layoutX="172.0" layoutY="104.0" />
       <TextField id="txtAdmissao" fx:id="txtDataAdmissao" layoutX="172.0" layoutY="147.0" />
       <TextField id="txtTurno" fx:id="txtTurno" layoutX="172.0" layoutY="196.0" />
-      <Button id="btnGravar" fx:id="btnGravar" layoutX="151.0" layoutY="576.0" mnemonicParsing="false" text="Gravar" />
-      <Button id="btnFechar" fx:id="btnFechar" layoutX="362.0" layoutY="576.0" mnemonicParsing="false" text="Fechar" />
+      <Button id="btnGravar" fx:id="btnGravar" layoutX="151.0" layoutY="576.0" mnemonicParsing="false" onAction="#salvar" text="Gravar" />
+      <Button id="btnFechar" fx:id="btnFechar" layoutX="362.0" layoutY="576.0" mnemonicParsing="false" onAction="#close" text="Fechar" />
       <ImageView fitHeight="251.0" fitWidth="245.0" layoutX="332.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Imagens/funcionarios.png" />

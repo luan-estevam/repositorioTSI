@@ -8,16 +8,14 @@ import java.sql.SQLException;
 
 import br.cinema.JPA.CinemaDAOException;
 import br.cinema.JPA.FabricaConexao;
+import br.cinema.dao.AutenticarDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -43,42 +41,25 @@ public class ControllerLogin {
 			return;
 		}
 
-		String sql = "SELECT * FROM tab_login WHERE usuario = ? and senha = ?";
+		AutenticarDAO aulog = new AutenticarDAO();
 
-		Connection conn;
-
-		try {
-			conn = FabricaConexao.getConnection();
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, user);
-			stmt.setString(2, pwd);
-
-			ResultSet rs = stmt.executeQuery();
-
-			while (rs.next()) {
-
-//				System.out.println("direcionar para dash");// direcionar para pagina inicial
-				try {
-					Pane root = FXMLLoader.load(getClass().getResource("../view/home.fxml"));
-					Scene scene = new Scene(root);
-					Stage primaryStage = new Stage();
-					primaryStage.setScene(scene);
-					primaryStage.show();
-				} catch (IOException e) {
-					System.out.println(e);
-				}
-
+		if (aulog.getLogin(user, pwd)) {
+			System.out.println("Direcionar para proxima pagina");
+			try {
+				Pane root = FXMLLoader.load(getClass().getResource("../view/home.fxml"));
+				Scene scene = new Scene(root);
+				Stage primaryStage = new Stage();
+				primaryStage.setScene(scene);
+				primaryStage.show();
+			} catch (IOException e) {
+				System.out.println(e);
 			}
+
+		} else {
 			Alert msg = new Alert(AlertType.ERROR);
 			msg.setContentText("Usuario ou Senha Incorretos");
 			msg.setHeaderText("Ops.. Algo deu errado!");
 			msg.showAndWait();
-
-			
-
-		} catch (SQLException e) {
-
-			e.printStackTrace();
 		}
 	}
 
@@ -89,7 +70,21 @@ public class ControllerLogin {
 
 	@FXML
 	void criarConta(ActionEvent event) {
+
+		final Stage primaryStage = new Stage();
+
 		System.out.println("criarConta");
+
+		try {
+			Pane root = FXMLLoader.load(getClass().getResource("../view/cliente.fxml"));
+			Scene scene = new Scene(root);
+
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

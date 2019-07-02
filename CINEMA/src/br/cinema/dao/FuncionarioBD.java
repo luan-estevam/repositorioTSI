@@ -10,7 +10,7 @@ import br.cinema.JPA.CinemaDAOException;
 import br.cinema.JPA.FabricaConexao;
 import br.cinema.model.Funcionarios;
 
-public class FuncionarioBD implements FuncionarioDAO {
+public class FuncionarioBD{
 
 	private Connection conn = null;
 	
@@ -25,7 +25,7 @@ public class FuncionarioBD implements FuncionarioDAO {
 			
 	}
 
-	@Override
+	
 	public void saveFuncionarios(Funcionarios funcionario) throws CinemaDAOException {
 		String sql = "INSERT INTO tab_funcionario VALUES (?,?,?,?)";
 		
@@ -35,9 +35,9 @@ public class FuncionarioBD implements FuncionarioDAO {
 			
 		stmt = conn.prepareStatement(sql);
 		
-		stmt.setFloat(1, funcionario.getSalario());
+		stmt.setString(1, funcionario.getSalario());
 		stmt.setString(2, funcionario.getFuncao());
-		stmt.setDate(3, (Date) funcionario.getDataAdmissao());
+		stmt.setString(3, funcionario.getDataAdmissao());
 		stmt.setString(4, funcionario.getTurno());
 		
 		
@@ -53,19 +53,19 @@ public class FuncionarioBD implements FuncionarioDAO {
 		
 	}
 
-	@Override
+	
 	public boolean deleteFuncionario(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+	
 	public List<Funcionarios> getFuncionarios() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public void updateFuncionarios(Funcionarios funcionario) {
 		// TODO Auto-generated method stub
 		

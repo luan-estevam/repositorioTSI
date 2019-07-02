@@ -1,9 +1,30 @@
 package br.cinema.model;
 
-public class Assento {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name="tab_assento")
+
+public class Assento {
+	
+//	@GeneratedValue
+	@Id
+	private int id; //tem que ter o id em todas as classes
+//	@Column(name="tipoAssentoNVPO")
 	private String tipo;
 	private String poltrona;
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getTipo() {
 		return tipo;

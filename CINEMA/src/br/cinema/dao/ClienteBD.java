@@ -11,7 +11,7 @@ import br.cinema.JPA.FabricaConexao;
 import br.cinema.model.Cliente;
 
 
-public class ClienteBD implements ClienteDAO {
+public class ClienteBD {
 	
 	
 	private Connection conn = null;
@@ -27,7 +27,7 @@ public class ClienteBD implements ClienteDAO {
 			
 	}
 
-	@Override
+	
 	public void saveCliente(Cliente cliente) throws CinemaDAOException {
 		String sql = "INSERT INTO tab_cliente VALUES (?,?,?)";
 		
@@ -38,8 +38,8 @@ public class ClienteBD implements ClienteDAO {
 		stmt = conn.prepareStatement(sql);
 		
 		stmt.setString(1, cliente.getTipoCliente());
-		stmt.setBoolean(2, cliente.isEstudante());
-		stmt.setDate(3, (Date) cliente.getValidade());
+		stmt.setString(2, cliente.Estudante());
+		stmt.setString(3, cliente.getValidade());
 		
 		
 		stmt.execute();
@@ -55,19 +55,19 @@ public class ClienteBD implements ClienteDAO {
 	}
 
 
-	@Override
+	
 	public boolean deleteCliente(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+	
 	public List<Cliente> getCliente() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public void updateCliente(Cliente cliente) {
 		// TODO Auto-generated method stub
 		

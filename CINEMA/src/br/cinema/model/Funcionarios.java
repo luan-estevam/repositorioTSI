@@ -2,18 +2,34 @@ package br.cinema.model;
 
 import java.util.Date;
 
-public class Funcionarios {
-	
-	private float salario;
-	private String funcao;
-	private Date dataAdmissao;
-	private String turno;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	public float getSalario() {
+@Entity
+@Table(name="tab_funcionario")
+public class Funcionarios extends Pessoa {
+	
+	
+	private int id;
+	private String salario;
+	private String funcao;
+	private String dataAdmissao;
+	private String turno;
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getSalario() {
 		return salario;
 	}
 
-	public void setSalario(float salario) {
+	public void setSalario(String salario) {
 		this.salario = salario;
 	}
 
@@ -25,11 +41,11 @@ public class Funcionarios {
 		this.funcao = funcao;
 	}
 
-	public Date getDataAdmissao() {
+	public String getDataAdmissao() {
 		return dataAdmissao;
 	}
 
-	public void setDataAdmissao(Date dataAdmissao) {
+	public void setDataAdmissao(String dataAdmissao) {
 		this.dataAdmissao = dataAdmissao;
 	}
 

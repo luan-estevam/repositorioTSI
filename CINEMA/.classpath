@@ -13,7 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/Luan Estevam/Downloads/jfoenix-8.0.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Luan Estevam/eclipse-workspace/CINEMA/lib/fontawesomefx-8.9.jar"/>
 	<classpathentry kind="lib" path="lib/mariadb-java-client-2.4.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>

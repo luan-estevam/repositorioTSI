@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.view.ControllerAssento">
    <children>
       <ImageView depthTest="ENABLE" fitHeight="313.0" fitWidth="425.0" layoutY="-1.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,12 +27,13 @@
       <TextField id="txtTipo" fx:id="txtAssento" layoutX="551.0" layoutY="93.0" />
       <Label layoutX="483.0" layoutY="132.0" text="Poltrona:" />
       <TextField id="txtPoltrona" fx:id="txtPoltrona" layoutX="551.0" layoutY="130.0" />
-      <Button id="btnGravar" fx:id="btnGravar" layoutX="496.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Gravar" />
-      <Button id="btnFechar" fx:id="btnFechar" layoutX="616.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Fechar" />
+      <Button id="btnGravar" fx:id="btnGravar" layoutX="496.0" layoutY="209.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="69.0" text="Gravar" />
+      <Button id="btnFechar" fx:id="btnFechar" layoutX="616.0" layoutY="209.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="69.0" text="Fechar" />
       <ImageView fitHeight="80.0" fitWidth="101.0" layoutX="445.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Imagens/Poltrona2.jpg" />
          </image>
       </ImageView>
+      <Accordion />
    </children>
 </Pane>

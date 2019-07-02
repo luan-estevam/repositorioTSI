@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_cliente")
-public class Cliente{
+@Table(name="tab_cliente")//igual na tabela do banco
+public class Cliente extends Pessoa {
 	
 	//extends Pessoa
 //		public Cliente(String cpf, String nome, String endereco, String fone, Date dtNascimento, String email, String cnpj, String cep) {
@@ -18,15 +18,16 @@ public class Cliente{
 //		// TODO Auto-generated constructor stub
 //	}
 		//---------------------------------------------------
-		@Id
-		private int idClientes;
+		
 		@Column(name="tipoClienteNVPO")
 		private String tipoCliente; //Normal; VIP; Platinum; Ouro
-		private boolean estudante;
-		private LocalDate validade;
+		private String estudante;
+		private String validade;
 		
 		
-		//----------------------------------------------------
+		
+
+		
 		public String getTipoCliente() {
 			return tipoCliente;
 		}
@@ -37,24 +38,26 @@ public class Cliente{
 		}
 		
 		//----------------------------------------------------
-		public boolean isEstudante() {
+		public String Estudante() {
 			return estudante;
 		}
 		
 		//----------------------------------------------------
-		public void setEstudante(boolean estudante) {
+		public void setEstudante(String estudante) {
 			this.estudante = estudante;
 		}
 		
 		//----------------------------------------------------
-		public LocalDate getValidade() {
+		public String getValidade() {
 			return validade;
 		}
 		
 		//----------------------------------------------------
-		public void setValidade(LocalDate validade) {
+		public void setValidade(String validade) {
 			this.validade = validade;
 		}
+		
+	
 			
 		
 }

@@ -1,20 +1,27 @@
 package br.cinema.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tab_filme")
 public class Filme {
 
-	private int idFilme;
+	@Id
+	private int id;
 	private String titulo;
 	private String duracao;
 	private String classificacao;
 	private String genero;
 	private String resumo;
 	
-	public int getIdFilme() {
-		return idFilme;
+	public int getId() {
+		return id;
 	}
 
-	public void setIdFilme(int idFilme) {
-		this.idFilme = idFilme;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTitulo() {

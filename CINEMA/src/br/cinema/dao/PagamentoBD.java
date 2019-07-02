@@ -9,7 +9,7 @@ import br.cinema.JPA.CinemaDAOException;
 import br.cinema.JPA.FabricaConexao;
 import br.cinema.model.Pagamento;
 
-public class PagamentoBD implements PagamentoDAO {
+public class PagamentoBD {
 
 	private Connection conn = null;
 	
@@ -24,9 +24,9 @@ public class PagamentoBD implements PagamentoDAO {
 			
 	}
 
-	@Override
+
 	public void savePagamento(Pagamento pagamento) throws CinemaDAOException {
-		String sql = "INSERT INTO tab_filme VALUES (?)";
+		String sql = "INSERT INTO tab_pagamento VALUES (?)";
 		
 		PreparedStatement stmt = null;
 		
@@ -49,19 +49,19 @@ public class PagamentoBD implements PagamentoDAO {
 		
 	}
 
-	@Override
+	
 	public boolean deletePagamento(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+	
 	public List<Pagamento> getPagamento() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public void updatePagamento(Pagamento pagamento) {
 		// TODO Auto-generated method stub
 		

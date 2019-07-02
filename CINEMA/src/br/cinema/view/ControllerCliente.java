@@ -1,10 +1,15 @@
 package br.cinema.view;
 
+import br.cinema.dao.ClientesDAO;
+import br.cinema.model.Cliente;
 import br.cinema.model.Formatar;
 import br.cinema.model.FormatarString;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class ControllerCliente {
 
@@ -47,7 +52,9 @@ public class ControllerCliente {
     @FXML
     private TextField txtDataNascimentoCliente;
     
-
+    @FXML
+    private TextField txtSenhaCliente;
+    
 	public void checkDados() {
 		
 	    Formatar fmt = new FormatarString();
@@ -56,6 +63,66 @@ public class ControllerCliente {
 		String maskCpf = "###.###.###-##";
 		
 	}
+	
+	@FXML
+	void close(ActionEvent event) {
+		System.exit(0);
+	}
+	
+	@FXML
+    private void salvar() {
+    	Cliente novoCliente = new Cliente();
+    	
+    	String nome = txtNomeCliente.getText().trim();
+		String cpf = txtCpfCliente.getText().trim();
+		String fone = txtFoneCliente.getText().trim();
+		String endereco = txtEnderecoCliente.getText().trim();
+		String dtNascimento = txtDataNascimentoCliente.getText().trim();
+		String email = txtEmailCliente.getText().trim();
+		String cnpj = txtCnpjCliente.getText().trim();
+		String cep = txtCpfCliente.getText().trim();
+		String tipoCliente = txtTipoCliente.getText().trim();
+		String estudante = txtEstudante.getText().trim();
+		String validade = txtValidade.getText().trim();
+		String senha = txtSenhaCliente.getText().trim();
+		
+		if (nome.equals("") && (cpf.equals("")) && (fone.equals("")) && (endereco.equals("") && (dtNascimento.equals("")
+				&& (email.equals("") && (cnpj.equals("") && (cep.equals("") && (tipoCliente.equals("") && (estudante.equals("")
+						&& (validade.equals("") && (senha.equals("")))))))))))  {
+			
+			Alert msg = new Alert(AlertType.ERROR);
+			msg.setContentText("Preencha os campos corretamente");
+			msg.setHeaderText("Ops.. Algo deu errado!");
+			msg.showAndWait();
+
+			return;
+		}
+		
+    	
+    	novoCliente.setNome(txtNomeCliente.getText());
+    	novoCliente.setCpf(txtCpfCliente.getText());
+    	novoCliente.setFone(txtFoneCliente.getText());
+    	novoCliente.setEndereco(txtEnderecoCliente.getText());
+    	novoCliente.setDtNascimento(txtDataNascimentoCliente.getText());
+    	novoCliente.setEmail(txtEmailCliente.getText());
+    	novoCliente.setCnpj(txtCnpjCliente.getText());
+    	novoCliente.setCep(txtCepCliente.getText());
+    	novoCliente.setTipoCliente(txtTipoCliente.getText());
+    	novoCliente.setEstudante(txtEstudante.getText());
+    	novoCliente.setValidade(txtValidade.getText());
+    	novoCliente.setSenha(txtSenhaCliente.getText());
+    	
+    	
+    	// novoCliente.setIdPessoa(Integer.parseInt(txtIdPessoa.getText())); Caso atributo seja Inteiro, usar o parse para converter a String para Int 
+    	
+    	
+    	ClientesDAO daoCli = new ClientesDAO();
+    	daoCli.save(novoCliente);
+    	
+    	
+    	
+    	
+    }
 
 }
 

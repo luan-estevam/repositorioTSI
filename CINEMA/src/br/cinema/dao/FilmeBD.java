@@ -9,7 +9,7 @@ import br.cinema.JPA.CinemaDAOException;
 import br.cinema.JPA.FabricaConexao;
 import br.cinema.model.Filme;
 
-public class FilmeBD implements FilmeDAO {
+public class FilmeBD {
 	
 	private Connection conn = null;
 	
@@ -24,7 +24,7 @@ public class FilmeBD implements FilmeDAO {
 			
 	}
 
-	@Override
+	
 	public void saveFilme(Filme filme) throws CinemaDAOException {
 		String sql = "INSERT INTO tab_filme VALUES (?,?,?,?,?,?)";
 		
@@ -34,7 +34,7 @@ public class FilmeBD implements FilmeDAO {
 			
 		stmt = conn.prepareStatement(sql);
 		
-		stmt.setInt(1, filme.getIdFilme());
+		stmt.setInt(1, filme.getId());
 		stmt.setString(2, filme.getTitulo());
 		stmt.setString(3, filme.getDuracao());
 		stmt.setString(4, filme.getClassificacao());
@@ -53,19 +53,19 @@ public class FilmeBD implements FilmeDAO {
 		
 	}
 
-	@Override
+	
 	public boolean deleteMovie(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+	
 	public List<Filme> getMovies() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public void updateMovie(Filme filme) {
 		// TODO Auto-generated method stub
 		

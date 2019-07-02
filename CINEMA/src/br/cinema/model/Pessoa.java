@@ -1,28 +1,45 @@
 package br.cinema.model;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 /**
  * @author Luan Estevam
  *
  */
+@Entity
+@Table(name="tab_pessoa")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Pessoa {
 	
-	
+	@Id
+	@GeneratedValue
+	private int id;
 	private String cpf;
 	private String nome;
 	private String endereco;
 	private String fone;
-	private Date dtNascimento;
+	private String dtNascimento;
 	private String email;
 	private String cnpj;
 	private String cep;
+	private String senha;
 	
 	
 	
 	//nenhuma classe pai pode ser instanciada, nuncaaa pode ser instanciada
 	
-	public Pessoa(String cpf, String nome, String endereco, String fone, Date dtNascimento, String email, String cnpj, String cep) {
+	public Pessoa() {
+	}
+
+
+
+	public Pessoa(String cpf, String nome, String endereco, String fone, String dtNascimento, String email, String cnpj, String cep) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
@@ -36,6 +53,18 @@ public class Pessoa {
 	
 	
 	
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
 	//-------------------------------------------------------------------------
 	public String getCpf() {
 		//retornar cpf com mask
@@ -88,13 +117,13 @@ public class Pessoa {
 	}
 	
 	//-------------------------------------------------------------------------
-	public Date getDtNascimento() {
+	public String getDtNascimento() {
 		return dtNascimento;
 	}
 	
 	//-------------------------------------------------------------------------
-	public void setDtNascimento(Date dtNascimento) {
-		this.dtNascimento = dtNascimento;
+	public void setDtNascimento(String string) {
+		this.dtNascimento = string;
 	}
 	
 	//-------------------------------------------------------------------------
@@ -129,6 +158,15 @@ public class Pessoa {
 	//-------------------------------------------------------------------------
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+	//-------------------------------------------------------------------------
+	public String getSenha() {
+		return senha;
+	}
+	
+	//-------------------------------------------------------------------------
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 	

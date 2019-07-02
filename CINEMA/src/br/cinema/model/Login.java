@@ -1,13 +1,29 @@
 package br.cinema.model;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import br.cinema.view.ControllerLogin;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name="tab_login")
 public class Login {
-
+	
+	@Id
+	private int id;
 	private String usuario;
 	private String senha;
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 
 	public String getUsuario() {
