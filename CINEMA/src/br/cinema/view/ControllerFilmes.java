@@ -5,8 +5,10 @@ import br.cinema.dao.FilmeDAO;
 import br.cinema.model.Filme;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class ControllerFilmes {
 	
@@ -38,8 +40,35 @@ public class ControllerFilmes {
 		}
 		
 		@FXML
-	    private void salvar() {
+	    private void salvar(ActionEvent mouseEvent) {
 	    	Filme novoFilme = new Filme();
+	    	
+	    	String titulo = txtTitulo.getText().trim();
+			String duracao = txtDuracao.getText().trim();
+			String classificacao = txtClassificacao.getText().trim();
+			String genero = txtGenero.getText().trim();
+			String resumo = txtResumo.getText().trim();
+			
+			
+			if (titulo.equals("") && (duracao.equals("")) && (classificacao.equals("")) && (genero.equals("") && (resumo.equals(""))))  {
+				
+				Alert msg = new Alert(AlertType.ERROR);
+				msg.setContentText("Preencha os campos corretamente");
+				msg.setHeaderText("Ops.. Algo deu errado!");
+				msg.showAndWait();
+
+				return;
+				
+			}else {
+				
+				
+				Alert msg = new Alert(AlertType.CONFIRMATION);
+				msg.setContentText("Obrigado!");
+				msg.setHeaderText("Salvo com sucesso!");
+				msg.showAndWait();
+				
+			}
+			
 	    	
 	    	novoFilme.setTitulo(txtTitulo.getText());
 	    	novoFilme.setDuracao(txtDuracao.getText()); 
@@ -56,4 +85,15 @@ public class ControllerFilmes {
 	    	
 	    }
 
+//		public void LimparCampos(){
+//		    
+//			txtTitulo.setText("");
+//			txtDuracao.setText("");
+//			txtClassificacao.setText("");
+//			txtGenero.setText("");
+//			txtResumo.setText("");
+//			
+//		    
+//		}
+		
 }

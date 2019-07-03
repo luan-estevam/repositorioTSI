@@ -5,8 +5,10 @@ import br.cinema.dao.FuncionarioDAO;
 import br.cinema.model.Funcionarios;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class ControllerFuncionarios {
 	
@@ -56,8 +58,43 @@ public class ControllerFuncionarios {
 		}
 		
 		@FXML
-	    private void salvar() {
+	    private void salvar(ActionEvent mouseEvent) {
 	    	Funcionarios novoFuncionario = new Funcionarios();
+	    	
+	    	String salario = txtSalario.getText().trim();
+			String funcao = txtFuncao.getText().trim();
+			String admissao = txtDataAdmissao.getText().trim();
+			String cpf = txtCpfFuncionario.getText().trim();
+			String nome = txtNomeFuncionario.getText().trim();
+			String endereco = txtEnderecoFuncionario.getText().trim();
+			String fone = txtFoneFuncionario.getText().trim();
+			String dtNascimento = txtDataNascimentoFuncionario.getText().trim();
+			String email = txtEmailFuncionario.getText().trim();
+			String cnpj = txtCnpjFuncionario.getText().trim();
+			String cep = txtCepFuncionario.getText().trim();
+			
+			
+			if (salario.equals("") && (funcao.equals("")) && (admissao.equals("")) && (cpf.equals("") && (nome.equals("")
+					&& (endereco.equals("") && (fone.equals("") && (dtNascimento.equals("") && (email.equals("") && (cnpj.equals("")
+							&& (cep.equals("") )))))))))  {
+				
+				Alert msg = new Alert(AlertType.ERROR);
+				msg.setContentText("Preencha os campos corretamente");
+				msg.setHeaderText("Ops.. Algo deu errado!");
+				msg.showAndWait();
+
+				return;
+				
+			}else {
+				
+				
+				Alert msg = new Alert(AlertType.CONFIRMATION);
+				msg.setContentText("Obrigado!");
+				msg.setHeaderText("Salvo com sucesso!");
+				msg.showAndWait();
+				
+			}
+			
 	    	
 	    	novoFuncionario.setNome(txtNomeFuncionario.getText());
 	    	novoFuncionario.setSalario(txtSalario.getText());
@@ -80,5 +117,21 @@ public class ControllerFuncionarios {
 	    	
 	    	
 	    }
+		
+//		public void LimparCampos(){
+//		    
+//			txtSalario.setText("");
+//			txtFuncao.setText("");
+//			txtDataAdmissao.setText("");
+//			txtCpfFuncionario.setText("");
+//			txtEnderecoFuncionario.setText("");
+//			txtFoneFuncionario.setText("");
+//			txtDataNascimentoFuncionario.setText("");
+//			txtEmailFuncionario.setText("");
+//			txtCnpjFuncionario.setText("");
+//			txtCepFuncionario.setText("");
+//			
+//		    
+//		}
 
 }

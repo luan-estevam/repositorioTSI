@@ -5,8 +5,10 @@ import br.cinema.dao.SessaoDAO;
 import br.cinema.model.Sessao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class ControllerSessao {
 	
@@ -37,8 +39,33 @@ public class ControllerSessao {
 		}
 		
 		@FXML
-	    private void salvar() {
+	    private void salvar(ActionEvent mouseEvent) {
 	    	Sessao novaSessao = new Sessao();
+	    	
+	    	String data = txtData.getText().trim();
+			String hora = txtHora.getText().trim();
+			String valor = txtValor.getText().trim();
+			String tipo = txtTipo.getText().trim();
+			
+			
+			if (data.equals("") && (hora.equals("")) && (valor.equals("")) && (tipo.equals("") ))  {
+				
+				Alert msg = new Alert(AlertType.ERROR);
+				msg.setContentText("Preencha os campos corretamente");
+				msg.setHeaderText("Ops.. Algo deu errado!");
+				msg.showAndWait();
+
+				return;
+				
+			}else {
+				
+				
+				Alert msg = new Alert(AlertType.CONFIRMATION);
+				msg.setContentText("Obrigado!");
+				msg.setHeaderText("Salvo com sucesso!");
+				msg.showAndWait();
+				
+			}
 	    	
 	    	novaSessao.setData(txtData.getText());
 	    	novaSessao.setHora(txtHora.getText()); 
@@ -51,5 +78,15 @@ public class ControllerSessao {
 	    	
 	    	
 	    }
+		
+//		public void LimparCampos(){
+//		    
+//			txtData.setText("");
+//			txtHora.setText("");
+//			txtValor.setText("");
+//			txtTipo.setText("");
+//			
+//		    
+//		}
 
 }

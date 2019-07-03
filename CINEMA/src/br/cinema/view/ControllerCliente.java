@@ -70,7 +70,7 @@ public class ControllerCliente {
 	}
 	
 	@FXML
-    private void salvar() {
+    private void salvar(ActionEvent mouseEvent) {
     	Cliente novoCliente = new Cliente();
     	
     	String nome = txtNomeCliente.getText().trim();
@@ -96,6 +96,15 @@ public class ControllerCliente {
 			msg.showAndWait();
 
 			return;
+			
+		}else {
+			
+			
+			Alert msg = new Alert(AlertType.CONFIRMATION);
+			msg.setContentText("Obrigado!");
+			msg.setHeaderText("Salvo com sucesso!");
+			msg.showAndWait();
+			
 		}
 		
     	
@@ -113,16 +122,37 @@ public class ControllerCliente {
     	novoCliente.setSenha(txtSenhaCliente.getText());
     	
     	
-    	// novoCliente.setIdPessoa(Integer.parseInt(txtIdPessoa.getText())); Caso atributo seja Inteiro, usar o parse para converter a String para Int 
+    	 
     	
     	
     	ClientesDAO daoCli = new ClientesDAO();
     	daoCli.save(novoCliente);
     	
     	
-    	
+    
     	
     }
+	
+
+	
+//	public void LimparCampos(){
+//	    
+//		txtNomeCliente.setText("");
+//		txtCpfCliente.setText("");
+//		txtFoneCliente.setText("");
+//		txtEnderecoCliente.setText("");
+//		txtDataNascimentoCliente.setText("");
+//		txtEmailCliente.setText("");
+//		txtCnpjCliente.setText("");
+//		txtCepCliente.setText("");
+//		txtTipoCliente.setText("");
+//		txtEstudante.setText("");
+//		txtValidade.setText("");
+//		txtSenhaCliente.setText("");
+//	    
+//	}
+		
+		
 
 }
 

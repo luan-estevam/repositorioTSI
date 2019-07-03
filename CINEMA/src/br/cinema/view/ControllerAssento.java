@@ -6,8 +6,10 @@ import br.cinema.model.Assento;
 import br.cinema.model.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class ControllerAssento {
 	
@@ -30,8 +32,28 @@ public class ControllerAssento {
 	}
 	
 	@FXML
-    private void salvar() {
+    private void salvar(ActionEvent mouseEvent) {
     	Assento novoAssento = new Assento();
+    	
+    	String poltrona = txtPoltrona.getText().trim();
+    	
+    	if (poltrona.equals("") )  {
+			
+			Alert msg = new Alert(AlertType.ERROR);
+			msg.setContentText("Preencha os campos corretamente");
+			msg.setHeaderText("Ops.. Algo deu errado!");
+			msg.showAndWait();
+
+			return;
+		}else {
+			
+			
+			Alert msg = new Alert(AlertType.CONFIRMATION);
+			msg.setContentText("Obrigado!");
+			msg.setHeaderText("Salvo com sucesso!");
+			msg.showAndWait();
+			
+		}
     	
     	novoAssento.setTipo(txtAssento.getText());
     	novoAssento.setPoltrona(txtPoltrona.getText()); 
@@ -44,5 +66,12 @@ public class ControllerAssento {
     	
     	
     }
+	
+//	public void LimparCampos(){
+//	    
+//		txtAssento.setText("");
+//		
+//	    
+//	}
 
 }

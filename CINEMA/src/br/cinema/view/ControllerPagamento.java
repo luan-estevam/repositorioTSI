@@ -5,8 +5,10 @@ import br.cinema.dao.PagamentoDAO;
 import br.cinema.model.Pagamento;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class ControllerPagamento {
 	
@@ -28,8 +30,31 @@ public class ControllerPagamento {
 		}
 		
 		@FXML
-	    private void salvar() {
+	    private void salvar(ActionEvent mouseEvent) {
 	    	Pagamento novoPagamento = new Pagamento();
+	    	
+	    	String pagamento = txtFormaPagamento.getText().trim();
+		
+			
+			if (pagamento.equals(""))  {
+				
+				Alert msg = new Alert(AlertType.ERROR);
+				msg.setContentText("Preencha os campos corretamente");
+				msg.setHeaderText("Ops.. Algo deu errado!");
+				msg.showAndWait();
+
+				return;
+				
+			}else {
+				
+
+				Alert msg = new Alert(AlertType.CONFIRMATION);
+				msg.setContentText("Obrigado!");
+				msg.setHeaderText("Salvo com sucesso!");
+				msg.showAndWait();
+				
+			}
+			
 	    	
 	    	novoPagamento.setForma(txtFormaPagamento.getText());
 	    	
@@ -42,4 +67,11 @@ public class ControllerPagamento {
 	    	
 	    	
 	    }
+		
+//		public void LimparCampos(){
+//		    
+//			txtFormaPagamento.setText("");
+//		
+//		    
+//		}
 }
