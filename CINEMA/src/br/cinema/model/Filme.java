@@ -1,6 +1,7 @@
 package br.cinema.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,6 +9,7 @@ import javax.persistence.Table;
 @Table(name="tab_filme")
 public class Filme {
 
+	@GeneratedValue
 	@Id
 	private int id;
 	private String titulo;

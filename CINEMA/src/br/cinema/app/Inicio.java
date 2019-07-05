@@ -59,5 +59,6 @@ public class Inicio extends Application {
 		}
 	}
 	
+	//fazer uma tela de venda usando comboBox
 
 }

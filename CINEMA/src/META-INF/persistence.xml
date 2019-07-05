@@ -15,6 +15,7 @@
 		<class>br.cinema.model.Pagamento</class>
 		<class>br.cinema.model.Sessao</class>
 		<class>br.cinema.model.Pessoa</class>
+		<class>br.cinema.model.Venda</class>
 
 		<properties>
 			<!-- dados da conexao -->

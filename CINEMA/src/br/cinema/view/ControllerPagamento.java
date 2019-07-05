@@ -42,6 +42,7 @@ public class ControllerPagamento {
 				msg.setContentText("Preencha os campos corretamente");
 				msg.setHeaderText("Ops.. Algo deu errado!");
 				msg.showAndWait();
+				
 
 				return;
 				
@@ -68,10 +69,5 @@ public class ControllerPagamento {
 	    	
 	    }
 		
-//		public void LimparCampos(){
-//		    
-//			txtFormaPagamento.setText("");
-//		
-//		    
-//		}
+	
 }

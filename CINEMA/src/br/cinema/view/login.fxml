@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
@@ -28,6 +29,6 @@
       <FontAwesomeIconView glyphName="KEY" layoutX="32.0" layoutY="216.0" size="20.0" />
       <FontAwesomeIconView fx:id="idClose" glyphName="CLOSE" layoutX="559.0" layoutY="32.0" onMouseClicked="#close" size="20.0" />
       <JFXTextField fx:id="txtLogin" layoutX="99.0" layoutY="140.0" prefHeight="25.0" prefWidth="212.0" />
-      <JFXTextField fx:id="txtSenha" layoutX="99.0" layoutY="197.0" prefHeight="25.0" prefWidth="212.0" />
+      <JFXPasswordField fx:id="txtSenha" layoutX="99.0" layoutY="200.0" prefHeight="25.0" prefWidth="212.0" />
    </children>
 </Pane>

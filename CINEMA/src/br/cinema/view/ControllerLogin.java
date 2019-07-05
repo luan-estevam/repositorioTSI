@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -25,7 +26,7 @@ public class ControllerLogin {
 	private TextField txtLogin;
 
 	@FXML
-	private TextField txtSenha;
+	private PasswordField txtSenha;
 
 	@FXML
 	void Logar(ActionEvent event) throws CinemaDAOException, IOException {

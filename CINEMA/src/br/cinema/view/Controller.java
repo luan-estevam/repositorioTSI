@@ -30,6 +30,9 @@ public class Controller {
 
 	@FXML
 	private Button btnLogin;
+	
+	@FXML
+	private Button btnVenda;
 
 //    @FXML
 //    public void openWindow(ActionEvent mouseEvent) {
@@ -69,6 +72,12 @@ public class Controller {
 
 			LoadFXML("funcionarios.fxml");
 
+		
+		
+		} else if (mouseEvent.getSource() == btnVenda) {
+	
+			LoadFXML("venda.fxml");
+	
 		}
 		if (mouseEvent.getSource() == btnLogin) {
 

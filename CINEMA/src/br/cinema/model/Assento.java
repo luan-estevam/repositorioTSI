@@ -2,6 +2,7 @@ package br.cinema.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 public class Assento {
 	
 //	@GeneratedValue
+	@GeneratedValue
 	@Id
 	private int id; //tem que ter o id em todas as classes
 //	@Column(name="tipoAssentoNVPO")

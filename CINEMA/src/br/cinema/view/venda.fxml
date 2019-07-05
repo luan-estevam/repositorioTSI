@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.view.ControllerLogin">
+   <children>
+      <ComboBox fx:id="cdFilme" layoutX="104.0" layoutY="121.0" prefWidth="150.0" />
+      <Label layoutX="68.0" layoutY="125.0" text="Filme" />
+      <Label layoutX="46.0" layoutY="205.0" prefHeight="0.0" prefWidth="45.0" text="Poltrona" />
+      <Button fx:id="btnGravar" layoutX="104.0" layoutY="291.0" mnemonicParsing="false" onAction="#Salvar" text="Gravar" />
+      <Label layoutX="68.0" layoutY="43.0" text="Data" />
+      <AnchorPane layoutX="325.0" layoutY="20.0" prefHeight="332.0" prefWidth="261.0">
+         <children>
+            <Label layoutX="38.0" layoutY="44.0" text="Data:" />
+            <Label layoutX="38.0" layoutY="100.0" text="Filme:" />
+            <Label layoutX="30.0" layoutY="183.0" text="Poltrona:" />
+            <Label fx:id="lblData" layoutX="80.0" layoutY="44.0" text="Label" />
+            <Label fx:id="lblFilme" layoutX="80.0" layoutY="100.0" text="Label" />
+            <Label fx:id="lblPoltrona" layoutX="94.0" layoutY="183.0" text="Label" />
+            <Label layoutX="37.0" layoutY="149.0" text="Valor:" />
+            <Label fx:id="lblValor" layoutX="80.0" layoutY="149.0" text="Label" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnFechar" layoutX="188.0" layoutY="291.0" mnemonicParsing="false" onAction="#Fechar" text="Fechar" />
+      <ComboBox fx:id="cbData" layoutX="104.0" layoutY="39.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbPoltrona" layoutX="104.0" layoutY="201.0" prefWidth="150.0" />
+   </children>
+</Pane>
